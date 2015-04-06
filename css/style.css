@@ -1,0 +1,227 @@
+@font-face {
+    font-family: HelveticaNeueCyr-Light; /* Гарнитура шрифта */
+    src: url(../fonts/HelveticaNeueCyr-Light.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: HelveticaNeueCyr-Thin; /* Гарнитура шрифта */
+    src: url(../fonts/HelveticaNeueCyr-Thin.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: HelveticaNeueCyr-UltraLight_0; /* Гарнитура шрифта */
+    src: url(../fonts/HelveticaNeueCyr-UltraLight_0.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: HelveticaNeueCyr-Roman; /* Гарнитура шрифта */
+    src: url(../fonts/HelveticaNeueCyr-Roman.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: HelveticaNeueCyr-Bold; /* Гарнитура шрифта */
+    src: url(../fonts/HelveticaNeueCyr-Bold.otf); /* Путь к файлу со шрифтом */
+}
+
+
+body {
+    /* Задаем фон для нашей страницы в виде обычного изображения.
+    Это нужно на случай, есть браузер не смог воспроизвести видео из-за того,
+    что он не поддерживает тег video. */
+    /* background: fixed url(images/video_bg.jpg) no-repeat;*/
+    background-size: cover;
+    background-color: black;
+    font-family: sans-serif;
+color: white;
+}
+
+#video_bg {
+    /* Делаем так, чтобы видеофон занимал фиксированное положение. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Располагаем наш фон под всем содержимым на странице.
+    Для этого используем отрицательный z-index. */
+    z-index: -1000;
+    /* Растягиваем видео так, чтобы не было видно черных полос и
+    чтобы независимо от разрешения экрана видеофон занимал все рабочее пространство. */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    #video_bg {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #video_bg {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@supports (object-fit: cover) {
+    #video_bg {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.wrapper {
+    width: 100%;
+    left: 0;
+    height: 100%;
+    /* margin-left: 50px;*/
+   position: absolute;
+    top: 0;/*
+    margin-top: -120px;*/
+   /* margin-left: 50px;*/
+    /* border: 1px solid white; */
+}
+.welcome>.menu{
+    height: 32px;
+    margin-top: 30px;
+    margin-left: -40px;
+}
+.welcome > .menu > li {
+    list-style-type: none;
+    float: left;
+
+    border-radius: 3px;
+    padding: 0 20px;
+    height: 30px;
+    font-size: 12px;
+}
+
+.welcome>.menu > #more {
+    background-color: red;
+    height: 32px;
+    line-height: 32px;
+
+}
+.welcome>.menu>#registration{
+    margin-left: 20px;
+    border: 1px solid aquamarine;
+    line-height: 30px;
+
+}
+.welcome>.title{
+    font-size: 50px;
+    font-weight: bold;
+}
+.welcome>.description{
+    font-size: 30px;
+
+}
+.welcome>.description2{
+    font-family: HelveticaNeueCyr-Thin;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+.welcome>.description2>b{
+    font-family: HelveticaNeueCyr-Bold;
+}
+.header>ul{
+    width: 500px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+.header>ul>li{
+    float: left;
+    list-style-type: none;
+    margin-left: 17px;
+    cursor: pointer;
+}
+.welcome{
+    position: relative;
+    top: 50%;
+    margin-top: -120px;
+    left: 50px;
+    width: 440px;
+}
+.registration{
+    height: 500px;
+    width:450px;
+    position: absolute;
+    background-color: #1f1f1f;
+    border-radius: 3px;
+    top: 50%;
+    margin-top: -250px;
+    left: 50%;
+    margin-left: -100px;
+    display: none;
+    opacity: 0;
+    z-index: 9999;
+}
+.column{
+    float: left;
+}
+.header{
+    position: relative;
+    z-index: 9999;
+    top: -10px;
+}
+.registration .title{
+
+    font-weight: bold;
+    font-size: 20px;
+   margin-top: 10px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 10px;
+    letter-spacing: -0.2px;
+}
+
+.regForm {
+    display: block;
+    margin: 5px auto;
+    width: 380px;
+    height: 35px;
+    padding: 0 10px;
+    background-color: #353535;
+    border: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+}
+.regForm:focus, .submit:focus{
+    outline: none;
+}
+.registration hr{
+    height: 1px;
+    border: none;
+    background-color: #343434;
+    width: 430px;
+    margin: 0 auto;
+}
+.iTitle{
+    margin: 20px auto 0;
+    width: 400px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.registration .submit{
+    border-radius: 3px;
+    padding: 0 20px;
+    font-size: 12px;
+    background-color: red;
+    height: 32px;
+    line-height: 32px;
+    border: none;
+    color: white;
+    float: right;
+    margin-right: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.registration .submit:active{
+    background-color: rgba(255,0,0,0.8);
+}
+.red{
+    color: red;
+    margin-left: 3px;
+}

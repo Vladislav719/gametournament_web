@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="header">
+    <ul>
+        <li id="reg">Зарегестрироваться</li>
+        <li>Зарегестрировать команду</li>
+        <li>Помощь</li>
+    </ul>
+</div>
+<div class="wrapper">
+    <div class="welcome column">
+        <div class="title">BATTLE ZONE</div>
+        <div class="description">Твой турнир - Твои правила</div>
+        <div class="description2">Устрой свой <b>турнир</b>, собери команду, позови друзей и знакомых, выпендрись перед
+            ними, играй, проигрывай, унижайся, <b>страдай</b></div>
+        <ul class="menu">
+            <li id="more">Узнать больше</li>
+            <li id="registration">Создать турнир</li>
+        </ul>
+    </div>
+
+    <div class="registration column">
+        <form action="#" method="post">
+     <div class="title">Регистрация</div>
+        <hr/>
+        <div class="iTitle">Логин<span class="red">*</span></div>
+     <input class="regForm login">
+        <div class="iTitle">Пароль<span class="red">*</span></div>
+     <input type="password" class="regForm password">
+        <div class="iTitle">Подтвердите пароль<span class="red">*</span></div>
+     <input type="password" class="regForm password">
+     <input type="submit" class="submit">
+        </form>
+    </div>
+</div>
+<video id="video_bg" autoplay="autoplay" loop="loop">
+
+    <source src="video/background.mp4" type="video/mp4"></source>
+    <source src="video/background.webm" type="video/webm"></source>
+</video>
+<script>
+    $(document).click(function (event) {
+        if ($(event.target).closest(".registration").length || $(event.target).closest("#reg").length) return;
+        regEmpty();
+        event.stopPropagation();
+    });
+
+    $("#reg").click(function () {
+        document.getElementById('video_bg').pause()
+        $(".registration").css({"display": "block"});
+        $(".registration").animate({"opacity": "1", "margin-left": "-225px"}, 300);
+        $(".welcome").animate({"zoom": "0.8"}, 300);
+    });
+
+    function regEmpty() {
+        $(".registration").animate({"opacity": "0", "margin-left": "-100px"}, {
+            duration: 300,
+            complete: function () {
+                $(".registration").css({"display": "none"});
+            }
+        });
+        $(".welcome").animate({"zoom": "1"}, 300);
+        document.getElementById('video_bg').play()
+    }
+
+
+</script>
+</body>
+</html>
