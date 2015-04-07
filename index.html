@@ -6,6 +6,9 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <meta charset="UTF-8">
     <title></title>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body>
 <div class="header">
@@ -29,23 +32,27 @@
 
     <div class="registration column">
         <form action="#" method="post">
-     <div class="title">Регистрация</div>
-        <hr/>
-        <div class="iTitle">Логин<span class="red">*</span></div>
-     <input class="regForm login">
-        <div class="iTitle">Пароль<span class="red">*</span></div>
-     <input type="password" class="regForm password">
-        <div class="iTitle">Подтвердите пароль<span class="red">*</span></div>
-     <input type="password" class="regForm password">
-     <input type="submit" class="submit">
+            <div class="title">Регистрация</div>
+            <hr/>
+            <div class="iTitle">Логин<span class="red">*</span></div>
+            <input class="regForm login">
+
+            <div class="iTitle">Пароль<span class="red">*</span></div>
+            <input type="password" class="regForm password">
+
+            <div class="iTitle">Подтвердите пароль<span class="red">*</span></div>
+            <input type="password" class="regForm password">
+            <input type="submit" class="submit">
         </form>
     </div>
 </div>
 <video id="video_bg" autoplay="autoplay" loop="loop">
 
-    <source src="video/background.mp4" type="video/mp4"></source>
     <source src="video/background.webm" type="video/webm"></source>
+    <source src="video/background.mp4" type="video/mp4"></source>
 </video>
+
+<script src="sliced_effect/js/classie.js"></script>
 <script>
     $(document).click(function (event) {
         if ($(event.target).closest(".registration").length || $(event.target).closest("#reg").length) return;
@@ -70,7 +77,6 @@
         $(".welcome").animate({"zoom": "1"}, 300);
         document.getElementById('video_bg').play()
     }
-
 
 </script>
 </body>
